@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Pay</title>
+</head>
+<body>
+    <button class="tradeno">Pay Now</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.tradeno').addEventListener('click', function() {
+                AlipayJSBridge.call("tradePay", {
+                    tradeNO: "2024061722001104721408498922"
+                }, function(result) {
+                    console.log(result);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
